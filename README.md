@@ -20,7 +20,8 @@ npm install test-smtp-server --save-dev
 
 ### Usage
 
-See [test code](https://github.com/webstech/test-smtp-server/test/index.ts) for an example.
+See [test code](
+https://github.com/webstech/test-smtp-server/blob/main/test/index.ts) for an example.
 
 ```js
 import { testSmtpServer } from "test-smtp-server";
