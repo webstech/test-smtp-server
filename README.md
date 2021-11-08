@@ -60,12 +60,14 @@ import { testSmtpServer } from "test-smtp-server";
 
 ### Security
 
-The server is started as secure but that may not be possibly in the tesing
+The server is started as secure but that may not be possible in the testing
 environment.  If the server does not have a valid certificate, the connection
-will fail from the client side. Some clients (e.g. nodemailer/SMTP-Transport options)
-allow connections to non-secure servers.  Node allows connections through an
-environment variable that turns off certificate authorization chaecking.  See
-[node_tls_reject_unauthorizedvalue](https://nodejs.org/api/cli.html#node_tls_reject_unauthorizedvalue)
+will fail from the client side. Some clients
+(e.g. nodemailer/SMTP-Transport options) allow connections to non-secure
+servers.  Node allows connections through an
+environment variable that turns off certificate authorization checking.  See
+[node_tls_reject_unauthorizedvalue](
+https://nodejs.org/api/cli.html#node_tls_reject_unauthorizedvalue)
 for more information.  This may be insecure if other ports are used.
 
 ## License
