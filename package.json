@@ -1,9 +1,8 @@
 {
   "name": "test-smtp-server",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "The test-smtp-server package allows internal testing of projects needing an SMTP server.",
   "main": "./build/lib/test-smtp-server.js",
-  "xtype": "module",
   "types": "./build/lib/test-smtp-server.d.ts",
   "directories": {
     "lib": "lib",

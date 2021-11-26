@@ -80,7 +80,7 @@ export class testSmtpServer {
     this.server = new SMTPServer({
       authOptional: true,
       onConnect(session, callback) {
-        if (session.remoteAddress !== "127.0.0.1") {
+        if (!session.remoteAddress.match(/^127.0.0.1|::1$/)) {
           return callback(new Error("Only connections from localhost allowed"));
         }
 
