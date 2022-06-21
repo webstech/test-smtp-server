@@ -46,6 +46,9 @@ export type testSmtpServerOptions = {
   /** the port number to use (default: 1025) */
   smtpPort?: number;
 
+  /** restrict ip addresses to localhost */
+  localhostOnly? : boolean;
+
   /** logging function like console.log() */
   debug?: (message?: unknown, ...optionalParams: any[]) => void;
 }
@@ -60,6 +63,7 @@ export class testSmtpServer {
   private debug = (_message?: unknown, ..._optionalParams: any[]) => {};
   private emails: eMail[] = [];
   private isDebugging = false;
+  private localhostOnly = true;
   private port: number;
   private server: SMTPServer;
 
@@ -68,6 +72,10 @@ export class testSmtpServer {
     if (options) {
       if (options.smtpPort) {
         this.port = options.smtpPort;
+      }
+
+      if (options.localhostOnly) {
+        this.localhostOnly = options.localhostOnly;
       }
 
       if (options.debug) {
@@ -80,7 +88,8 @@ export class testSmtpServer {
     this.server = new SMTPServer({
       authOptional: true,
       onConnect(session, callback) {
-        if (!session.remoteAddress.match(/^127.0.0.1|::1$/)) {
+        // 172.17 prefix is a linux docker container
+        if (that.localhostOnly && !session.remoteAddress.match(/^172.17|127.0.0.1|::1$/)) {
           return callback(new Error("Only connections from localhost allowed"));
         }
 
