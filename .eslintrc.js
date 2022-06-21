@@ -50,7 +50,7 @@ module.exports = {
         "max-len": [
             "error",
             {
-                "code": 80
+                "code": 120
             }
         ],
         "new-parens": "error",
