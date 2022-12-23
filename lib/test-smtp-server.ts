@@ -113,7 +113,7 @@ export class testSmtpServer {
         stream.on("end", () => {
           const buffer = Buffer.concat(buffers);
           const email = new eMail(session.envelope, buffer);
-          that.emails.unshift(email);
+          that.emails.push(email);
 
           if (that.isDebugging) {
             that.debug(JSON.stringify(email,
@@ -144,7 +144,7 @@ export class testSmtpServer {
   }
 
   /**
-   * Retrieve the set of emails in order from latest to oldest.
+   * Retrieve the set of emails in order from oldest to most recent.
    *
    * @returns array of eMail objects
    */

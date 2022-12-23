@@ -49,12 +49,12 @@ if (commandOptions.debug) {
     text: "Check it out!"
   };
 
-    const messageId = [];   // for validation
+  const messageId = [];   // for validation
 
-  messageId.unshift(await sendMail(email, smtpOptions));
+  messageId.push(await sendMail(email, smtpOptions));
 
   email.subject = "second test";
-  messageId.unshift(await sendMail(email, smtpOptions));
+  messageId.push(await sendMail(email, smtpOptions));
 
   const mails = smtpserver.getEmails();
 

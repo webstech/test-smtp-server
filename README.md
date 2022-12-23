@@ -4,7 +4,8 @@ Test SMTP Server is a lightweight wrapper for
 [smtp-server](<https://nodemailer.com/extras/smtp-server/>).
 It is primarily intended for development and testing.  The test code can start the server, run email tests and then validate the email contents.  It can replace the use of external fake SMTP services which may have availablility issues.
 
-All received emails are stored in an array.  The emails may be viewed as raw data or a parsed object that is easily examined.
+All received emails are stored in an array in the order received.  The emails
+may be viewed as raw data or a parsed object that is easily examined.
 
 ## Getting Started
 
@@ -31,8 +32,9 @@ import { testSmtpServer } from "test-smtp-server";
   await smtpserver.startServer();   // start listening
 
   // send some emails capturing ids ..
-  messageId.unshift( await sendMail(email, smtpOptions));
+  messageId.push( await sendMail(email, smtpOptions));
 
+  // get emails in sent order
   const mails = smtpserver.getEmails();
 
   // validate/dump emails
