@@ -1,6 +1,6 @@
 {
   "name": "test-smtp-server",
-  "version": "0.9.4",
+  "version": "0.9.6",
   "description": "The test-smtp-server package allows internal testing of projects needing an SMTP server.",
   "main": "./build/lib/test-smtp-server.js",
   "types": "./build/lib/test-smtp-server.d.ts",
@@ -44,20 +44,20 @@
     "url": "git+https://github.com/webstech/test-smtp-server"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.4",
+    "@types/nodemailer": "^6.4.7",
     "@types/smtp-server": "^3.5.7",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "commander": "^9.3.0",
-    "eslint": "^8.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "commander": "^9.4.1",
+    "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-jsdoc": "^39.6.4",
     "nodemailer": "^6.7.5",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.4"
   },
   "dependencies": {
     "@types/mailparser": "^3.4.0",
-    "mailparser": "^3.5.0",
+    "mailparser": "^3.6.2",
     "smtp-server": "^3.11.0"
   },
   "engines": {
