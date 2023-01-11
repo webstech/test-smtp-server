@@ -11,7 +11,7 @@ may be viewed as raw data or a parsed object that is easily examined.
 
 ### Prerequisites
 
-Tested on Node v16 with npm v7.
+Tested on Node v18 with npm v9.
 
 ### Installation
 
