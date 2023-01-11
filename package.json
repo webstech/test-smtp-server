@@ -1,6 +1,6 @@
 {
   "name": "test-smtp-server",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "The test-smtp-server package allows internal testing of projects needing an SMTP server.",
   "main": "./build/lib/test-smtp-server.js",
   "types": "./build/lib/test-smtp-server.d.ts",
@@ -20,7 +20,7 @@
     "test:js": "node test/jstest.mjs",
     "preversion": "npm run build && npm test",
     "postversion": "git push --follow-tags"
-},
+  },
   "bugs": {
     "url": "https://github.com/webstech/test-smtp-server/issues"
   },
