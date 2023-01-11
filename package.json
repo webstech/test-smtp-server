@@ -17,8 +17,10 @@
     "lint": "eslint --ignore-path .gitignore -c .eslintrc.js --ext .ts,.js \"{lib,test}/**/*.{ts,tsx,mjs,js}\"",
     "test": "npm run test:ts && npm run test:js",
     "test:ts": "node build/test/index.js",
-    "test:js": "node test/jstest.mjs"
-  },
+    "test:js": "node test/jstest.mjs",
+    "preversion": "npm run build && npm test",
+    "postversion": "git push --follow-tags"
+},
   "bugs": {
     "url": "https://github.com/webstech/test-smtp-server/issues"
   },
