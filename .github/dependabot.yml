@@ -1,8 +1,28 @@
 version: 2
 updates:
-  # Keep npm dependencies up to date
+  # Run monthly with no limits
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every month
+      interval: "monthly"
+updates:
+  # Run weekly ignoring patches (esp linters)
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    ignore:
+      # For @types packages, ignore all patch updates
+      - dependency-name: "@types/*"
+        update-types: ["version-update:semver-patch"]
+      # For eslint packages, ignore all patch updates
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-patch"]
