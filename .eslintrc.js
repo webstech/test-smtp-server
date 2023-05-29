@@ -42,7 +42,13 @@ module.exports = {
                 ],
             },
         ],
-        "jsdoc/newline-after-description": "error",
+        "jsdoc/tag-lines": [
+            "error",
+            "any",
+            {
+                "startLines": 1,
+            },
+        ],
         "max-classes-per-file": [
             "error",
             2
