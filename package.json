@@ -46,21 +46,21 @@
     "url": "git+https://github.com/webstech/test-smtp-server"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.7",
+    "@types/nodemailer": "^6.4.9",
     "@types/smtp-server": "^3.5.7",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^5.47.0",
+    "@typescript-eslint/parser": "^6.2.1",
     "commander": "^11.0.0",
-    "eslint": "^8.30.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jsdoc": "^46.2.4",
-    "nodemailer": "^6.7.5",
-    "typescript": "^5.0.2"
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-jsdoc": "^46.4.5",
+    "nodemailer": "^6.9.4",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@types/mailparser": "^3.4.0",
-    "mailparser": "^3.6.2",
-    "smtp-server": "^3.11.0"
+    "mailparser": "^3.6.5",
+    "smtp-server": "^3.12.0"
   },
   "engines": {
     "node": ">= 16.0.0"
