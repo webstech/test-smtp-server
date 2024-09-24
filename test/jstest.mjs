@@ -46,7 +46,7 @@ if (commandOptions.debug) {
     from: smtpOptions.smtpUser,
     to: "someone@server.com",
     subject: "first test",
-    text: "Check it out!"
+    text: "Check it out!",
   };
 
   const messageId = [];   // for validation
@@ -69,8 +69,7 @@ if (commandOptions.debug) {
       const parsed = await mail.getParsed();
 
       if (parsed.messageId !== messageId[entry]) {
-        throw new Error(`Messageids do not match for email ${entry} <${
-          parsed.messageId}> <${messageId[entry]}>`);
+        throw new Error(`Messageids do not match for email ${entry} <${parsed.messageId}> <${messageId[entry]}>`);
       }
 
       console.log(JSON.stringify(parsed, null, 2));
@@ -81,7 +80,6 @@ if (commandOptions.debug) {
   }
 
   smtpserver.stopServer();          // terminate server
-
 })().catch((reason) => {
   console.log(`Caught error ${reason}:\n${reason.stack}\n`);
   process.exit(1);
@@ -94,8 +92,7 @@ if (commandOptions.debug) {
  * @param smtpOptions possible host/port/user info
  * @returns message id
  */
-async function sendMail(mail,
-  smtpOptions) {
+async function sendMail(mail, smtpOptions) {
   const transportOpts = {
     auth: {
       pass: smtpOptions.smtpPass,
@@ -105,8 +102,8 @@ async function sendMail(mail,
     host: smtpOptions.smtpHost,
     secure: true,
     tls: {
-      rejectUnauthorized: false
-    }
+      rejectUnauthorized: false,
+    },
   };
 
   return new Promise((resolve, reject) => {

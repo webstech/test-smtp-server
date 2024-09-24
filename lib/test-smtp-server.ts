@@ -28,10 +28,9 @@ export class eMail {
       const stream = Readable.from(this.buffer);
       const options: SimpleParserOptions = {
         skipHtmlToText: true,
-        skipTextLinks : true,
-        skipTextToHtml: true
-
-      }
+        skipTextLinks: true,
+        skipTextToHtml: true,
+      };
       return simpleParser(stream, options);
     } else {
       throw new Error("Empty email buffer");
@@ -47,11 +46,11 @@ export type testSmtpServerOptions = {
   smtpPort?: number;
 
   /** restrict ip addresses to localhost */
-  localhostOnly? : boolean;
+  localhostOnly?: boolean;
 
   /** logging function like console.log() */
   debug?: (message?: unknown, ...optionalParams: any[]) => void;
-}
+};
 
 /**
  * Create a testSmtpServer.  This provides a wrapper to SMTPServer that
@@ -59,7 +58,6 @@ export type testSmtpServerOptions = {
  * can be examined to validate the content.
  */
 export class testSmtpServer {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   private debug = (_message?: unknown, ..._optionalParams: any[]) => {};
   private emails: eMail[] = [];
   private isDebugging = false;
@@ -67,7 +65,7 @@ export class testSmtpServer {
   private port: number;
   private server: SMTPServer;
 
-  public constructor(options?: testSmtpServerOptions | undefined) {
+  public constructor(options?: testSmtpServerOptions) {
     this.port = 1025;
     if (options) {
       if (options.smtpPort) {
@@ -137,7 +135,7 @@ export class testSmtpServer {
    *
    * @returns number of emails deleted
    */
-   public clearEmails(): number {
+  public clearEmails(): number {
     const count = this.emails.length;
     this.emails.length = 0;
     return count;
@@ -148,7 +146,7 @@ export class testSmtpServer {
    *
    * @returns array of eMail objects
    */
-   public getEmails(): eMail[] {
+  public getEmails(): eMail[] {
     return this.emails;
   }
 
