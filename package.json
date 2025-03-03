@@ -46,7 +46,7 @@
     "url": "git+https://github.com/webstech/test-smtp-server"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^3.0.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
     "@types/nodemailer": "^6.4.16",
     "@types/smtp-server": "^3.5.10",
     "commander": "^13.0.0",
