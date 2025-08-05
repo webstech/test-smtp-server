@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.2.2",
+    "@types/node": "^24.2.0",
     "@types/nodemailer": "^6.4.16",
     "@types/smtp-server": "^3.5.10",
     "commander": "^14.0.0",
