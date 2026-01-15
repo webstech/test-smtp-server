@@ -52,7 +52,7 @@
     "@types/smtp-server": "^3.5.12",
     "commander": "^14.0.2",
     "eslint": "^9.39.1",
-    "eslint-plugin-jsdoc": "^61.5.0",
+    "eslint-plugin-jsdoc": "^62.0.0",
     "eslint-plugin-security": "^3.0.1",
     "nodemailer": "^7.0.11",
     "typescript": "^5.9.3",
