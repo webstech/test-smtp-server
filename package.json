@@ -51,7 +51,7 @@
     "@types/nodemailer": "^7.0.9",
     "@types/smtp-server": "^3.5.12",
     "commander": "^14.0.3",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "eslint-plugin-jsdoc": "^62.5.0",
     "eslint-plugin-security": "^3.0.1",
     "nodemailer": "^8.0.1",
