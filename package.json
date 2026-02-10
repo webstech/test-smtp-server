@@ -54,7 +54,7 @@
     "eslint": "^9.39.2",
     "eslint-plugin-jsdoc": "^62.5.0",
     "eslint-plugin-security": "^3.0.1",
-    "nodemailer": "^7.0.13",
+    "nodemailer": "^8.0.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "8.54.0"
   },
