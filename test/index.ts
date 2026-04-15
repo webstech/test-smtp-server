@@ -2,7 +2,6 @@
 
 import { Command } from "commander";
 import { createTransport, SendMailOptions } from "nodemailer";
-import * as SMTPTransport from "nodemailer/lib/smtp-transport";
 // reminder: file extension must be provided.
 import { testSmtpServer, testSmtpServerOptions } from "../lib/test-smtp-server.js";
 
@@ -101,7 +100,7 @@ if (commandOptions.debug) {
  * @returns message id
  */
 async function sendMail(mail: SendMailOptions, smtpOptions: ISMTPOptions): Promise<string> {
-  const transportOpts: SMTPTransport.Options = {
+  const transportOpts = {
     auth: {
       pass: smtpOptions.smtpPass,
       user: smtpOptions.smtpUser,
