@@ -8,7 +8,7 @@
  * available as env vars.
  */
 
-import { Command } from "commander/esm.mjs";
+import { Command } from "commander";
 import { createTransport } from "nodemailer";
 import { testSmtpServer } from "../build/lib/test-smtp-server.js";
 
