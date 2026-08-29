@@ -1,18 +1,5 @@
 version: 2
 updates:
-  # Run monthly with no limits
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 10
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      # Check for updates to GitHub Actions every month
-      interval: "monthly"
-updates:
   # Run weekly ignoring patches (esp linters)
   - package-ecosystem: "npm"
     directory: "/"
@@ -20,9 +7,26 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 10
     ignore:
+      - dependency-name: "*eslint*"
       # For @types packages, ignore all patch updates
       - dependency-name: "@types/*"
         update-types: ["version-update:semver-patch"]
-      # For eslint packages, ignore all patch updates
-      - dependency-name: "eslint"
-        update-types: ["version-update:semver-patch"]
+  - package-ecosystem: "npm"
+    allow:
+      - dependency-name: "*eslint*"
+      - dependency-name: "@types/*"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 10
+    target-branch: main
+    groups:
+      lint:
+        patterns:
+          - "*eslint*"
+  # https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot#enabling-dependabot-version-updates-for-actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every month
+      interval: "monthly"
